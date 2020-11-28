@@ -49,14 +49,14 @@ export const HierarchyLine: React.FC<Props> = (props) => {
     >
       {!isRoot && (
         <div onClick={onClickHandler}>
-          <span style={{ transform: "translateY(4px)" }}>
-            <ChevronDownIcon
-              style={{
-                transform: isOpened ? undefined : "rotate(-90deg)",
-                fontSize: "12px",
-              }}
-            />
-          </span>
+          <ChevronDownIcon
+            style={{
+              transform: isOpened
+                ? "translateX(-5px)"
+                : `rotate(-90deg) translateY(-5px)`,
+              fontSize: "12px",
+            }}
+          />
           <MapIcon
             style={{
               margin: "0 15px",
