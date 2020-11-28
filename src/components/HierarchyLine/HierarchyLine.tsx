@@ -38,7 +38,15 @@ export const HierarchyLine: React.FC<Props> = (props) => {
   const isOpened = Boolean(isRoot || opened.find((elem) => elem === id));
 
   return (
-    <div className={classes.rootHierarchyLine}>
+    <div
+      className={classes.rootHierarchyLine}
+      style={{
+        borderLeft:
+          isRoot || parsedPaths[0]?.path?.split(".")?.length === 2
+            ? "none"
+            : undefined,
+      }}
+    >
       {!isRoot && (
         <div onClick={onClickHandler}>
           <span style={{ transform: "translateY(4px)" }}>
